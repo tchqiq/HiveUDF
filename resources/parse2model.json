@@ -1,0 +1,89 @@
+{
+    "sources": {
+        "v0": {
+            "type": "custom",
+            "ref": [
+                {
+                    "name": "time_local",
+                    "type": "string"
+                },
+                {
+                    "name": "remote_addr",
+                    "type": "string"
+                },
+                {
+                    "name": "response_status",
+                    "type": "string"
+                },
+                {
+                    "name": "request",
+                    "type": "custom",
+                    "data_type": "nginx_url",
+                    "ref": {
+                        "v0": {
+                            "pid": {
+                                "type": "string"
+                            },
+                            "sub_pid": {
+                                "type": "string"
+                            },
+                            "source_user": {
+                                "type": "string"
+                            },
+                            "record_time": {
+                                "type": "string"
+                            },
+                            "record_user": {
+                                "type": "string"
+                            },
+                            "role": {
+                                "type": "string"
+                            },
+                            "action": {
+                                "type": "string"
+                            },
+                            "sub_action": {
+                                "type": "string"
+                            },
+                            "version": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "http_referer",
+                    "type": "string"
+                },
+                {
+                    "name": "tj_uuid",
+                    "type": "string"
+                },
+                {
+                    "name": "request_body",
+                    "type": "custom",
+                    "data_type": "json_array",
+                    "ref": {
+                        "v0": {
+                            "obj_data": {
+				"default": "-",
+                                "name": "data",
+                                "type": "string"
+                            },
+                            "src_data": {
+				"default": "-",
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "http_user_agent",
+                    "type": "string"
+                }
+            ]
+        }
+    },
+    "array_splitter": "001",
+    "array_splitter_type": "char"
+}
