@@ -20,7 +20,7 @@ import com.google.common.collect.Maps;
 		+ "  > SELECT extract_type_from_curl(curl) FROM file_pv_track a;\n")
 public final class ExtractType extends UDF {
 
-	private static Map<String, Map<String, String>> propMap = Maps.newHashMap();
+	private static Map<String, Map<String, String>> propMap = Maps.newHashMapWithExpectedSize(3);
 	private static Properties p = new Properties();
 	private static Map<String, String> m = Maps.newHashMapWithExpectedSize(150);
 	private Text output = new Text();
@@ -31,11 +31,12 @@ public final class ExtractType extends UDF {
 		Text tt = new Text();
 		Text t2 = new Text();
 		Text tt2 = new Text();
-		t.set("12");
+		t.set("455");
 		tt.set("city.properties");
-		t2.set("11");
-		tt2.set("city.properties");
+		t2.set("2");
+		tt2.set("orderstatus.properties");
 		System.out.println(ep.evaluate(t, tt).toString());
+		System.out.println(ep.evaluate(t2, tt2).toString());
 
 	}
 	
@@ -88,9 +89,9 @@ public final class ExtractType extends UDF {
 		if (Strings.isNullOrEmpty(str))
 			return type;
 
-		if (ruleMap.containsKey(str)) {
-			type = ruleMap.get(str);
-		}
+		String tmp = ruleMap.get((str));
+		
+		type = Strings.isNullOrEmpty(tmp) ? type : tmp;
 
 		return type;
 	}
