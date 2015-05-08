@@ -2,6 +2,7 @@ package cn.com.diditaxi.hive.cf;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
@@ -20,7 +21,7 @@ import com.google.common.collect.Maps;
 		+ "  > SELECT extract_type_from_curl(curl) FROM file_pv_track a;\n")
 public final class ExtractType extends UDF {
 
-	private static Map<String, Map<String, String>> propMap = Maps.newHashMapWithExpectedSize(3);
+	private static Map<String, Map<String, String>> propMap = new HashMap<String,Map<String,String>>(3);
 	private static Properties p = new Properties();
 	private static Map<String, String> m = Maps.newHashMapWithExpectedSize(150);
 	private Text output = new Text();
@@ -89,9 +90,9 @@ public final class ExtractType extends UDF {
 		if (Strings.isNullOrEmpty(str))
 			return type;
 
-		String tmp = ruleMap.get((str));
-		
-		type = Strings.isNullOrEmpty(tmp) ? type : tmp;
+		if (ruleMap.containsKey(str)) {
+			type = ruleMap.get(str);
+		}
 
 		return type;
 	}
