@@ -1,6 +1,4 @@
-package cn.com.diditaxi.hive.cf;
-
-import cn.com.diditaxi.handler.Handler;
+package cn.com.diditaxi.handler;
 
 import com.google.common.collect.Maps;
 

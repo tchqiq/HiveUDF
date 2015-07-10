@@ -1,10 +1,8 @@
-package cn.com.diditaxi.hive.cf;
+package cn.com.diditaxi.handler;
 
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import cn.com.diditaxi.handler.Handler;
 
 import com.google.common.collect.Maps;
 

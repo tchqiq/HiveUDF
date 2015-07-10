@@ -32,8 +32,8 @@ public final class ExtractType extends UDF {
 		Text tt = new Text();
 		Text t2 = new Text();
 		Text tt2 = new Text();
-		t.set("5");
-		tt.set("driverstatus.properties");
+		t.set("25");
+		tt.set("car_province.properties");
 		t2.set("7");
 		tt2.set("orderstatus.properties");
 		System.out.println(ep.evaluate(t, tt).toString());
