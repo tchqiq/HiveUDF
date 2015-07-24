@@ -33,7 +33,8 @@ import org.apache.hive.pdk.HivePdkUnitTests;
  * 
  */
 
-@Description(name = "str_to_date", value = "_FUNC_(dateText, pattern [, days]) - Convert time string with given pattern "
+@Description(name = "str_to_date", value = "_FUNC_(dateText, pattern [, days]) - "
+		+ "Convert time string with given pattern "
         + "to time string with 'yyyy-MM-dd HH:mm:ss' pattern\n", extended = "Example:\n"
         + "> SELECT _FUNC_('2011/05/01','yyyy/MM/dd') FROM src LIMIT 1;\n"
         + "2011-05-01 00:00:00\n"
